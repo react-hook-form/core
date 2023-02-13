@@ -11,71 +11,20 @@
 ### Quickstart
 
 ```jsx
-import { useForm } from 'react-hook-form';
+import { createFormControl } from '@hookform/core';
 
-function App() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+const { register, setValue } = createFormControl({
+  defaultValues: {
+    name: 'Bill',
+  },
+});
 
-  return (
-    <form onSubmit={handleSubmit((data) => console.log(data))}>
-      <input {...register('firstName')} />
-      <input {...register('lastName', { required: true })} />
-      {errors.lastName && <p>Last name is required.</p>}
-      <input {...register('age', { pattern: /\d+/ })} />
-      {errors.age && <p>Please enter number for age.</p>}
-      <input type="submit" />
-    </form>
-  );
-}
+register('name', { required: true });
+setValue('name', 'test');
 ```
 
 <a href="https://ui.dev/bytes/?r=bill">
   <img src="https://raw.githubusercontent.com/react-hook-form/react-hook-form/master/docs/ads-1.jpeg" />
-</a>
-
-### Sponsors
-
-Thanks go to these kind and lovely sponsors!
-
-<a
-    target = _blank
-    href = 'https://wantedlyinc.com'
-/>
-<img
-        width = 94
-        src = 'https://images.opencollective.com/wantedly/d94e44e/logo/256.png'
-    />
-</a>
-<a
-    target = _blank
-    href = 'https://graphcms.com'
-/>
-<img
-        width = 94
-        src = 'https://avatars.githubusercontent.com/u/31031438'
-    />
-</a>
-<a
-    target = _blank
-    href = 'https://kanamekey.com'
-/>
-<img
-        width = 94
-        src = 'https://images.opencollective.com/kaname/d15fd98/logo/256.png'
-    />
-</a>
-<a
-    target = _blank
-    href = 'https://formcarry.com/'
-/>
-<img
-        width = 94
-        src = 'https://images.opencollective.com/formcarry/a40a4ea/logo/256.png'
-    />
 </a>
 
 ### Backers
