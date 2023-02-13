@@ -12,7 +12,8 @@
     "test:watch": "pnpm test -- --onlyChanged --watch",
     "test:type": "tsd src/__typetest__",
     "lint": "eslint '**/*.{js,ts,tsx}'",
-    "lint:fix": "pnpm lint --fix"
+    "lint:fix": "pnpm lint --fix",
+    "api-extractor:ci": "node ./apiExtractor.js"
   },
   "types": "dist/types/index.d.ts",
   "devDependencies": {
