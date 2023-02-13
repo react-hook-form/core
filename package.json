@@ -17,6 +17,7 @@
   },
   "types": "dist/types/index.d.ts",
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.34.4",
     "@swc/jest": "^0.2.24",
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.4.0",
