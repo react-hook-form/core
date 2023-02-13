@@ -1,4 +1,4 @@
-import swap from '../..//utils/swap';
+import swap from '../../utils/swap';
 
 describe('swap', () => {
   it('should swap value positions', () => {

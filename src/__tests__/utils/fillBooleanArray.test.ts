@@ -1,4 +1,4 @@
-import fillBooleanArray from '../..//utils/fillBooleanArray';
+import fillBooleanArray from '../../utils/fillBooleanArray';
 
 describe('filterBooleanArray', () => {
   it('should be filtered array', () => {

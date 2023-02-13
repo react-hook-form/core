@@ -1,4 +1,4 @@
-import { VALIDATION_MODE } from '../..//constants';
+import { VALIDATION_MODE } from '../../constants';
 import validationModeChecker from '../../logic/getValidationModes';
 
 describe('validationModeChecker', () => {

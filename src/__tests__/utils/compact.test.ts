@@ -1,4 +1,4 @@
-import filterOutFalsy from '../..//utils/compact';
+import filterOutFalsy from '../../utils/compact';
 
 describe('filterOutFalsy', () => {
   it('should return filtered array when array value is falsy ', () => {

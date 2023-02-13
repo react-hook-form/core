@@ -1,4 +1,4 @@
-import unset from '../..//utils/unset';
+import unset from '../../utils/unset';
 
 describe('unset', () => {
   it('should unset the array', () => {

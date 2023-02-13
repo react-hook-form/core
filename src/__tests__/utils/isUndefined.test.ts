@@ -1,4 +1,4 @@
-import isUndefined from '../..//utils/isUndefined';
+import isUndefined from '../../utils/isUndefined';
 
 describe('isUndefined', () => {
   it('should return true when it is an undefined value', () => {

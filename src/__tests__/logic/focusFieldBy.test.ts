@@ -1,5 +1,5 @@
 import focusFieldBy from '../../logic/focusFieldBy';
-import get from '../..//utils/get';
+import get from '../../utils/get';
 
 describe('focusFieldBy', () => {
   it('should focus on the first error it encounter', () => {
