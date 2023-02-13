@@ -3,7 +3,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "version": "0.0.1",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "bunchee ./src/index.ts",
     "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx}\"",
