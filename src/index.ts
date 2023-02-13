@@ -7,6 +7,7 @@ import getEventValue from './logic/getEventValue';
 import getFocusFieldName from './logic/getFocusFieldName';
 import getProxyFormState from './logic/getProxyFormState';
 import getValidationModes from './logic/getValidationModes';
+import isNameInFieldArray from './logic/isNameInFieldArray';
 import isWatched from './logic/isWatched';
 import shouldRenderFormState from './logic/shouldRenderFormState';
 import shouldSubscribeByName from './logic/shouldSubscribeByName';
@@ -52,6 +53,7 @@ export {
   getValidationModes,
   insertAt,
   isEmptyObject,
+  isNameInFieldArray,
   // utils
   isFunction,
   isWatched,
