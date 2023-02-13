@@ -340,8 +340,6 @@ export type FormStateProxy<TFieldValues extends FieldValues = FieldValues> = {
     isValid: boolean;
 };
 
-// Warning: (ae-forgotten-export) The symbol "Subject" needs to be exported by the entry point index.d.ts
-//
 // @public (undocumented)
 export type FormStateSubjectRef<TFieldValues extends FieldValues> = Subject<Partial<FormState<TFieldValues>> & {
     name?: InternalFieldName;
@@ -429,6 +427,9 @@ export type IsFlatObject<T extends object> = Extract<Exclude<T[keyof T], NestedV
 
 // @public (undocumented)
 export const isFunction: (value: unknown) => value is Function;
+
+// @public (undocumented)
+export const isNameInFieldArray: (names: Set<InternalFieldName>, name: InternalFieldName) => boolean;
 
 // @public
 export type IsNever<T> = [T] extends [never] ? true : false;
@@ -525,6 +526,11 @@ export type NumericKeys<T extends Traversable> = UnionToIntersection<T extends R
 
 // @public
 export type ObjectKeys<T extends Traversable> = Exclude<ToKey<keyof T>, `${string}.${string}` | ''>;
+
+// @public (undocumented)
+export type Observer<T> = {
+    next: (value: T) => void;
+};
 
 // Warning: (ae-forgotten-export) The symbol "PathInternal" needs to be exported by the entry point index.d.ts
 //
@@ -652,6 +658,13 @@ export type SplitPathString<PS extends PathString> = SplitPathStringImpl<PS, [
 ]>;
 
 // @public (undocumented)
+export type Subject<T> = {
+    readonly observers: Observer<T>[];
+    subscribe: (value: Observer<T>) => Subscription;
+    unsubscribe: Noop;
+} & Observer<T>;
+
+// @public (undocumented)
 export type Subjects<TFieldValues extends FieldValues = FieldValues> = {
     watch: Subject<{
         name?: InternalFieldName;
@@ -670,6 +683,11 @@ export type SubmitErrorHandler<TFieldValues extends FieldValues> = (errors: Fiel
 
 // @public (undocumented)
 export type SubmitHandler<TFieldValues extends FieldValues> = (data: TFieldValues, event?: React.BaseSyntheticEvent) => any | Promise<any>;
+
+// @public (undocumented)
+export type Subscription = {
+    unsubscribe: Noop;
+};
 
 // @public (undocumented)
 export const swapArrayAt: <T>(data: T[], indexA: number, indexB: number) => void;
@@ -955,8 +973,7 @@ export type WatchObserver<TFieldValues extends FieldValues> = (value: DeepPartia
 
 // Warnings were encountered during analysis:
 //
-// dist/index.d.ts:734:5 - (ae-forgotten-export) The symbol "AsyncDefaultValues" needs to be exported by the entry point index.d.ts
-// dist/index.d.ts:1013:5 - (ae-forgotten-export) The symbol "Subscription" needs to be exported by the entry point index.d.ts
+// dist/types/index.d.ts:734:5 - (ae-forgotten-export) The symbol "AsyncDefaultValues" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 
