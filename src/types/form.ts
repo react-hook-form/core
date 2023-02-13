@@ -1,5 +1,3 @@
-import { Subject, Subscription } from './subjects';
-
 import { ErrorOption, FieldError, FieldErrors } from './errors';
 import { EventType } from './events';
 import { FieldArray } from './fieldArray';
@@ -16,6 +14,7 @@ import {
   FieldPathValues,
 } from './path';
 import { Resolver } from './resolvers';
+import { Subject, Subscription } from './subjects';
 import { DeepMap, DeepPartial, Noop } from './utils';
 import { RegisterOptions } from './validator';
 
