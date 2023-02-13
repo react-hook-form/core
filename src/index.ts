@@ -53,9 +53,9 @@ export {
   getValidationModes,
   insertAt,
   isEmptyObject,
-  isNameInFieldArray,
   // utils
   isFunction,
+  isNameInFieldArray,
   isWatched,
   moveArrayAt,
   prependAt,
