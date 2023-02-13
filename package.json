@@ -13,7 +13,7 @@
     "test:type": "tsd src/__typetest__",
     "lint": "eslint '**/*.{js,ts,tsx}'",
     "lint:fix": "pnpm lint --fix",
-    "api-extractor:ci": "node ./apiExtractor.js"
+    "api-extractor:ci": "node apiExtractor.js"
   },
   "types": "dist/types/index.d.ts",
   "devDependencies": {
