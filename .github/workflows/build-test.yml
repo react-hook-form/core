@@ -1,0 +1,40 @@
+name: Unit Test / Lint
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Do we want to run with multiple versions of node?
+        node-version: [16]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: |
+          pnpm lint
+          pnpm type
+
+        # What is --ci?
+      - name: Test
+        run: |
+          pnpm run test --ci
+          pnpm test:type
