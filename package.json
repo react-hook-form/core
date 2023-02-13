@@ -3,6 +3,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "version": "0.0.1",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "bunchee ./src/index.ts",
     "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx}\"",
@@ -13,9 +14,9 @@
     "test:type": "tsd src/__typetest__",
     "lint": "eslint '**/*.{js,ts,tsx}'",
     "lint:fix": "pnpm lint --fix",
+    "api-extractor:build": "pnpm build && pnpm api-extractor",
     "api-extractor:ci": "node apiExtractor.js"
   },
-  "types": "dist/types/index.d.ts",
   "devDependencies": {
     "@microsoft/api-extractor": "^7.34.4",
     "@swc/jest": "^0.2.24",
